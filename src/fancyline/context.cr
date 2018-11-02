@@ -152,7 +152,6 @@ class Fancyline
       @sub_lines = { sub_info.size, @sub_lines }.max
 
       sub_info.each do |line|
-        @fancyline.output.print "\n"
 
         if line.is_a?(Drawable)
           line.draw(self)

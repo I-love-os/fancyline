@@ -4,7 +4,7 @@ class Fancyline
     # suggestions are created using the `Fancyline#autocomplete` middleware.
     class Completion < Widget
       # Hard limit of completions.  More are discarded.
-      MAX_COMPLETIONS = 20
+      MAX_COMPLETIONS = 5
 
       @original_line = ""
       @original_cursor = 0
