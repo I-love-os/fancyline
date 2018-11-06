@@ -4,7 +4,7 @@ class Fancyline
     # suggestions are created using the `Fancyline#autocomplete` middleware.
     class Completion < Widget
       # Hard limit of completions.  More are discarded.
-      MAX_COMPLETIONS = 5
+      MAX_COMPLETIONS = 10
 
       @original_line = ""
       @original_cursor = 0
@@ -119,6 +119,7 @@ class Fancyline
         if @position >= @suggestions.size
           ctx.editor.line = @original_line
           ctx.editor.cursor = @original_cursor
+          apply_suggestion(ctx, @suggestions[@position - 1])
         else
           apply_suggestion(ctx, @suggestions[@position])
         end
